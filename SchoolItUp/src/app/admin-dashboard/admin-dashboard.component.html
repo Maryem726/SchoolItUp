@@ -1,0 +1,165 @@
+<br>
+<h1>&nbsp;&nbsp;Accées Rapide</h1>
+
+<table style="text-align: center;">
+  <tr>
+    <th>
+      <mat-card style="text-align: center; max-width: 130px;">
+        <mat-card-header>
+          <mat-card-title style="color: orangered;">Classes</mat-card-title>
+        </mat-card-header>
+        <span style="color: orangered;">7</span>
+      </mat-card>
+    </th>
+    <th>
+      <mat-card style="text-align: center; max-width: 130px;">
+        <mat-card-header>
+          <mat-card-title style="color: green;">Eleves</mat-card-title>
+        </mat-card-header>
+        <span style="color: green;">140</span>
+      </mat-card>
+    </th>
+  </tr>
+  <tr>
+    <th>
+      <mat-card style="text-align: center; max-width: 130px;">
+        <mat-card-header>
+          <mat-card-title style="color: blue;">Professeurs</mat-card-title>
+        </mat-card-header>
+        <span style="color: blue;">12</span>
+      </mat-card>
+    </th>
+    <th>
+      <mat-card style="text-align: center; max-width: 130px;">
+        <mat-card-header>
+          <mat-card-title style="color: purple;">Evenements</mat-card-title>
+        </mat-card-header>
+        <span style="color: purple;">4</span>
+      </mat-card>
+    </th>
+  </tr>
+</table>
+
+<br>
+<mat-divider style="margin-left: 10px; margin-right: 10px;"></mat-divider>
+<br>
+
+<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <mat-icon>restaurant</mat-icon> &nbsp;<b>Menu du Jour</b>
+    </mat-panel-title>
+    <mat-panel-description>
+      {{dt}}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <mat-list role="list">
+    <mat-list-item role="listitem">
+      <div mat-card-avatar class="soup"></div>
+      <div mat-line>Entrée</div>
+      <div mat-line>Soup</div>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      <div mat-card-avatar class="pizza"></div>
+      <div mat-line>Plât Principale</div>
+      <div mat-line>Pizza</div>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      <div mat-card-avatar class="watermelon"></div>
+      <div mat-line>Dessert</div>
+      <div mat-line>Pesteque</div>
+    </mat-list-item>
+  </mat-list>
+</mat-expansion-panel>
+
+<br>
+<mat-divider style="margin-left: 10px; margin-right: 10px;"></mat-divider>
+<br>
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Dernière Classe Ajoutée</mat-card-title>
+    <mat-card-subtitle>3A9 | Classe 2020 - 2021</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image
+    src="https://kfor.com/wp-content/uploads/sites/3/2021/02/classroom_1542034403442_61914801_ver1.0.jpg"
+    alt="Last Class Added">
+  <mat-card-actions style="text-align: center;">
+    <button mat-button style="background-color: skyblue;">Consulter</button>
+    <button mat-button style="background-color: greenyellow;">Modifier</button>
+    <button mat-button style="background-color: salmon;">Supprimer</button>
+  </mat-card-actions>
+</mat-card>
+
+<br>
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image2"></div>
+    <mat-card-title>Dernier Elève Ajouté</mat-card-title>
+    <mat-card-subtitle>Doe, Jane - 3A9 | Classe 2020 - 2021</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://scitechdaily.com/images/COVID-School-Student.jpg" alt="Last Student Added">
+  <mat-card-actions style="text-align: center;">
+    <button mat-button style="background-color: skyblue;">Détails</button>
+    <button mat-button style="background-color: greenyellow;">Modifier</button>
+    <button mat-button style="background-color: salmon;">Supprimer</button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image3"></div>
+    <mat-card-title>Dernier Professeur Ajouté</mat-card-title>
+    <mat-card-subtitle>Doe, John</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://www.educomics.org/wp-content/uploads/2019/03/images1409-5c9549c89560b.jpg"
+    alt="Last Teacher Added">
+  <mat-card-actions style="text-align: center;">
+    <button mat-button style="background-color: skyblue;">Détails</button>
+    <button mat-button style="background-color: greenyellow;">Modifier</button>
+    <button mat-button style="background-color: salmon;">Supprimer</button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image3"></div>
+    <mat-card-title>Dernier Evenement Ajouté</mat-card-title>
+    <mat-card-subtitle>Fondaments de participations | par John Doe</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://artsintegration.com/wp-content/uploads/2018/08/dagani.jpg" alt="Last Event Added">
+  <mat-card-actions style="text-align: center;">
+    <button mat-button style="background-color: skyblue;">Détails</button>
+    <button mat-button style="background-color: greenyellow;">Modifier</button>
+    <button mat-button style="background-color: salmon;">Supprimer</button>
+  </mat-card-actions>
+</mat-card>
+
+
+
+<button [matMenuTriggerFor]="float_add_Menu" mat-fab color="primary" class="flt">
+  <mat-icon>add</mat-icon>
+</button>
+
+<mat-menu #float_add_Menu="matMenu" yPosition="above">
+  <button mat-menu-item>
+    <mat-icon>child_care</mat-icon> Elève
+  </button>
+  <button mat-menu-item>
+    <mat-icon>school</mat-icon> Classe
+  </button>
+  <button mat-menu-item>
+    <mat-icon>groups</mat-icon> Professeur
+  </button>
+  <button mat-menu-item>
+    <mat-icon>escalator_warning</mat-icon> Parent
+  </button>
+  <button mat-menu-item>
+    <mat-icon>interests</mat-icon> Evenement
+  </button>
+  <button mat-menu-item>
+    <mat-icon>directions_run</mat-icon> Activitée
+  </button>
+</mat-menu>

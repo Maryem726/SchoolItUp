@@ -1,0 +1,41 @@
+example-card {
+    max-width: 400px;
+    background-color: lightgrey;
+}
+  
+.example-header-image {
+    background-image: url('https://graphicriver.img.customer.envatousercontent.com/files/281627077/preview.jpg?auto=compress%2Cformat&q=80&fit=crop&crop=top&max-h=8000&max-w=590&s=6b2714bddb20209a97b5cfcd91b67ec3');
+    background-size: cover;
+}
+
+.example-header-image2{
+    background-image: url('https://www.educationmattersmag.com.au/wp-content/uploads/2015/09/shutterstock-student-primary-girl-writing-1024x678.gif');
+    background-size: cover;
+}
+
+.flt{
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 999;
+}
+
+.example-header-image3{
+    background-image: url('https://www.educomics.org/wp-content/uploads/2019/03/images1409-5c9549c89560b.jpg');
+    background-size: cover;
+}
+
+.pizza{
+    background-image: url('https://www.toutlevin.com/img/a0fc4ba355969aa491841847eb63dcc1004740003000-960.jpg');
+    background-size: cover;
+}
+
+.soup{
+    background-image: url('https://i.ytimg.com/vi/LrKhcvZYFdQ/maxresdefault.jpg');
+    background-size: cover;
+}
+
+.watermelon{
+    background-image: url('https://www.gardeningknowhow.com/wp-content/uploads/2021/05/whole-and-slices-watermelon.jpg');
+    background-size: cover;
+}

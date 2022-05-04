@@ -1,0 +1,162 @@
+<mat-toolbar class="mat-elevation-z8">
+  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened">
+      menu
+    </mat-icon>
+    <mat-icon *ngIf="sidenav.opened">
+      close
+    </mat-icon>
+  </button>
+  Espace Administrateur
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+
+    <img class="avatar mat-elevation-z8"
+      src="https://cours-informatique-gratuit.fr/wp-content/uploads/2014/05/administrateur.png"
+      alt="Admin Profile Picture" />
+
+    <h4 class="name">Mr. X</h4>
+    <p class="designation">Administarteur</p>
+
+    <mat-divider></mat-divider>
+
+    <button routerLink="/admin" mat-button class="menu-button">
+      <mat-icon>dashboard</mat-icon>
+      <span>Tableau de Bord</span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>person</mat-icon>
+      <span>Profile</span>
+    </button>
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button" [matMenuTriggerFor]="afterMenuProf">
+      <mat-icon>groups</mat-icon>
+      <span>Professeurs</span>
+    </button>
+    <mat-menu #afterMenuProf="matMenu" xPosition="after">
+      <button mat-menu-item>
+        <mat-icon>add</mat-icon>Ajouter Un Professeur
+      </button>
+      <button mat-menu-item>
+        <mat-icon>list</mat-icon>Afficher les Professeurs
+      </button>
+    </mat-menu>
+
+    <button mat-button class="menu-button" [matMenuTriggerFor]="afterMenuClasses">
+      <mat-icon>school</mat-icon>
+      <span>Classes</span>
+    </button>
+    <mat-menu #afterMenuClasses="matMenu" xPosition="after">
+      <button mat-menu-item>
+        <mat-icon>add</mat-icon>Ajouter Une Classe
+      </button>
+      <button mat-menu-item>
+        <mat-icon>domain</mat-icon>Afficher les Classes
+      </button>
+    </mat-menu>
+
+    <button mat-button class="menu-button" [matMenuTriggerFor]="afterMenuEleves">
+      <mat-icon>child_care</mat-icon>
+      <span>Elèves</span>
+    </button>
+    <mat-menu #afterMenuEleves="matMenu" xPosition="after">
+      <button mat-menu-item routerLink='/addStudent' routerLinkActive="active">
+        <mat-icon>person_add</mat-icon>Ajouter Un èlève
+      </button>
+      <button mat-menu-item>
+        <mat-icon>people_alt</mat-icon>Afficher les èlèves
+      </button>
+    </mat-menu>
+
+    <button mat-button class="menu-button" [matMenuTriggerFor]="afterMenuParents">
+      <mat-icon>escalator_warning</mat-icon>
+      <span>Parents</span>
+    </button>
+    <mat-menu #afterMenuParents="matMenu" xPosition="after">
+      <button mat-menu-item>
+        <mat-icon>person_add</mat-icon>Ajouter Un Parent
+      </button>
+      <button mat-menu-item>
+        <mat-icon>people_alt</mat-icon>Afficher les parents
+      </button>
+    </mat-menu>
+
+    <button mat-button class="menu-button" [matMenuTriggerFor]="afterMenuInterests">
+      <mat-icon>interests</mat-icon>
+      <span>Evenements</span>
+    </button>
+    <mat-menu #afterMenuInterests="matMenu" xPosition="after">
+      <button mat-menu-item>
+        <mat-icon>add</mat-icon>Ajouter Un Evenement
+      </button>
+      <button mat-menu-item>
+        <mat-icon>list</mat-icon>Lister les Evenements
+      </button>
+    </mat-menu>
+
+
+    <button mat-button class="menu-button" [matMenuTriggerFor]="afterMenuActivites">
+      <mat-icon>directions_run</mat-icon>
+      <span>Activités</span>
+    </button>
+    <mat-menu #afterMenuActivites="matMenu" xPosition="after">
+      <button mat-menu-item>
+        <mat-icon>add</mat-icon>Ajouter Une Activité
+      </button>
+      <button mat-menu-item>
+        <mat-icon>list</mat-icon>Lister les Activités
+      </button>
+    </mat-menu>
+
+    <button mat-button class="menu-button">
+      <mat-icon>fastfood</mat-icon>
+      <span>Cantine</span>
+    </button>
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button">
+      <mat-icon>help</mat-icon>
+      <span>Aide</span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>logout</mat-icon>
+      <span>Déconnexion</span>
+    </button>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <!-- <button [matMenuTriggerFor]="float_add_Menu" mat-fab color="primary" class="flt">
+        <mat-icon>add</mat-icon>
+      </button>
+      <mat-menu #float_add_Menu="matMenu" yPosition="above">
+        <button mat-menu-item routerLink='/addStudent' routerLinkActive="active">
+          <mat-icon>child_care</mat-icon> Elève
+        </button>
+        <button mat-menu-item>
+          <mat-icon>school</mat-icon> Classe
+        </button>
+        <button mat-menu-item>
+          <mat-icon>groups</mat-icon> Professeur
+        </button>
+        <button mat-menu-item>
+          <mat-icon>escalator_warning</mat-icon> Parent
+        </button>
+        <button mat-menu-item>
+          <mat-icon>interests</mat-icon> Evenement
+        </button>
+        <button mat-menu-item>
+          <mat-icon>directions_run</mat-icon> Activitée
+        </button>
+      </mat-menu> -->
+
+      <router-outlet></router-outlet>
+
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

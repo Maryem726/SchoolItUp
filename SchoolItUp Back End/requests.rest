@@ -1,0 +1,180 @@
+POST http://localhost:3000/loginTeacher
+Content-Type: application/json
+
+{
+    "mail" : "example.com"
+}
+
+###
+
+GET http://localhost:3000/teacher/announcements/610e51b140f9c72b907aaaf0
+
+###
+POST http://localhost:3000/teacher/announcements/add
+Content-Type: application/json
+
+{
+    "description" : "Be Advised, you'll have a test next Monday. ",
+    "teacher" : "610e51b140f9c72b907aaaf0",
+    "subject" : "61102298ebcc7a3bd886471f"
+}
+
+###
+POST http://localhost:3000/teacher/announcements/comment/6113be55177ccb1354adbb81
+Content-Type: application/json
+
+{
+    "content" : "FIRST !!!",
+    "teacher" : "610e51b140f9c72b907aaaf0"
+}
+
+###
+
+GET http://localhost:3000/admin/classes
+
+
+###
+
+PATCH  http://localhost:3000/teacher/mevals/update/61115decaafaf820f82997e0
+Content-Type: application/json
+
+{
+    "productivity" : 8,
+    "participation" : 5,
+    "behavior" : 9,
+    "productivity_average" : 7.8,
+    "student_eval" : "Excellent productivity and Behaviour, needs more work on his Social Skills",
+    "teacher" : "610e51b140f9c72b907aaaf0",
+    "subject" : "61102298ebcc7a3bd886471f"
+}
+
+###
+//REGISTER STUDENT JSON INPUT
+POST  http://localhost:3000/auth/register-student
+Content-Type: application/json
+
+{
+    "first_name" : "SUBJECT",
+    "last_name" : "TWO",
+    "birthDate" : "01-01-1970",
+    "adress" : "Tunis",
+    "phoneNumber" : "12345678",
+    "parents_status" : "MARRIED",
+    "hosted_by" : "BOTH PARENTS",
+    "siblings" : true,
+    "old_school" : "ESPRIT",
+    "application_status" : "PENDING",
+    "pass" : "password",
+    "parent" : "6116d9595c1e153b1cf7403e"
+}
+
+###
+//REGISTER TEACHER JSON INPUT
+POST  http://localhost:3000/auth/register-parent
+Content-Type: application/json
+
+{
+    "first_name" : "PARENT SUBJECT",
+    "last_name" : "TWO",
+    "birthDate" : "01-01-1950",
+    "adress" : "Tunis",
+    "phoneNumber" : "87654321",
+    "pass" : "password",
+    "cin" : "00112233",
+    "etat_civil" : "MARRIED",
+    "mail" : "parentsubject.two@example.com"
+}
+
+###
+//GET ALL STUDENTS AS ADMIN
+GET http://localhost:3000/admin/students
+
+
+###
+//LOGIN SECTION
+POST http://localhost:3000/auth/login-student
+Content-Type: application/json
+
+{
+    "first_name" : "SUBJECT",
+    "last_name" : "TWO",
+    "pass" : "password"
+}
+
+
+###
+//CONSULT CURRENT PROFILE
+GET http://localhost:3000/auth/profile
+Content-Type: application/json
+
+{
+    "Authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTE2ZDk1OTVjMWUxNTNiMWNmNzQwM2UiLCJmaXJzdF9uYW1lIjoiUEFSRU5UIFNVQkpFQ1QiLCJsYXN0X25hbWUiOiJUV08iLCJyb2xlIjoiUEFSRU5UIiwiaWF0IjoxNjI4OTQ1NTkwLCJleHAiOjE2MjkxMTgzOTB9.7MhQNfGW4n6PoMv2yX_ve95sMqLg1pp5Wl7nnpPlARI"
+}
+
+###
+//CONSULT CURRENT PROFILE
+GET http://localhost:3000/auth/profile
+
+
+###
+GET http://localhost:3000/admin/teachers
+
+###
+GET http://localhost:3000/admin/subjects
+
+###
+POST http://localhost:3000/admin/teachers/add
+Content-Type: application/json
+
+{
+    "first_name" : "TEACHER",
+    "last_name" : "TWO",
+    "birthDate" : "01-01-1950",
+    "adress" : "Tunis",
+    "phoneNumber" : "15975326",
+    "pass" : "password",
+    "cin" : "09536241",
+    "etat_civil" : "MARRIED",
+    "mail" : "teacher.two@example.com"
+}
+
+###
+POST http://localhost:3000/teacher/tasks/add
+Content-Type: application/json
+
+{
+    "name" : "TASK THREE",
+    "description" : "THIS IS THE DESCRIPTION OF TASK THREE",
+    "deadline" : "09-20-2021",
+    "class" : "610fcad0679e5f212c827006",
+    "subject" : "61102298ebcc7a3bd886471f",
+    "teacher" : "6123dc401cade408803b0d21"
+
+}
+
+
+###
+GET http://localhost:3000/teacher/tasks/6123dc401cade408803b0d21
+
+###
+PATCH http://localhost:3000/student/deposit/update/6123e9443f21f31c2874cc09
+Content-Type: application/json
+
+{
+    "task" : "6123f75aadb5c52c70178414",
+    "img_location" : "SOMEWHERE",
+    "img_type" : "SOMETHING",
+    "student" : "6116da23e5216b1cc8018f32"
+}
+
+###
+GET http://localhost:3000/student/deposit/6123e6495b29dc2758971f2a/6116da23e5216b1cc8018f32
+
+###
+PATCH http://localhost:3000/teacher/add_mark/6123e9443f21f31c2874cc09
+Content-Type: application/json
+
+{
+    "mark" : 13,
+    "side_notes" : "LATE, BUT NOT BAD, KID!"
+}
